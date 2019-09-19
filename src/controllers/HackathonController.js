@@ -1,3 +1,4 @@
+const R = require('rambda');
 const Hackathon = require('../models/Hackathon');
 
 module.exports = {
@@ -20,5 +21,33 @@ module.exports = {
 		});
 
 		return res.json(hackathon);
+	},
+
+	async validateCode(req, res) {
+		const { code } = req.query;
+
+		const hacka = await Hackathon.findOne({
+			$or: [
+				{
+					mentorLink: { $eq: code }
+				},
+				{
+					participantLink: { $eq: code }
+				}
+			]
+		});
+		if (R.isEmpty(hacka)) {
+			return res.json({ status: 'error' });
+		}
+		const isMentor = link.includes('mentor-hacktrack') ? true : false;
+
+		const response = {
+			name: hacka.name,
+			identifier: hacka.identifier,
+			isMentor,
+			status: 'ok'
+		};
+
+		return res.json(response);
 	}
 };
