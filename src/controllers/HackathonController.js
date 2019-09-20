@@ -8,7 +8,7 @@ module.exports = {
 		const hackaExists = await Hackathon.findOne({ identifier: identifier });
 
 		if (hackaExists) {
-			return res.json(hackaExists);
+			return res.json({ status: 'error', msg: 'Hackathon already exists!' });
 		}
 
 		const number = new Date().getTime() % 1000;
@@ -36,12 +36,14 @@ module.exports = {
 				}
 			]
 		});
+
 		if (R.isEmpty(hacka)) {
 			return res.json({ status: 'error' });
 		}
-		const isMentor = link.includes('mentor-hacktrack') ? true : false;
+		const isMentor = code.includes('mentor-hacktrack') ? true : false;
 
 		const response = {
+			_id: hacka._id,
 			name: hacka.name,
 			identifier: hacka.identifier,
 			isMentor,
