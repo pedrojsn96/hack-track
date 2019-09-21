@@ -26,8 +26,6 @@ module.exports = {
 
 		const tracks = await Track.find({ team: { $eq: teamId } });
 
-		// const tracks = team.tracks;
-
 		return res.json(tracks);
 	}
 };
