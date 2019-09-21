@@ -24,6 +24,7 @@ module.exports = {
 
 		team.users.push(user._id);
 		await team.save();
+		req.io.emit('teams');
 
 		return res.json(team);
 	},
@@ -48,6 +49,7 @@ module.exports = {
 
 		team.users.push(user._id);
 		await team.save();
+		req.io.emit('teams');
 
 		return res.json(team);
 	}

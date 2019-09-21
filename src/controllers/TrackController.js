@@ -1,6 +1,5 @@
 const Team = require('../models/Team');
 const Track = require('../models/Track');
-const File = require('../models/File');
 
 module.exports = {
 	async store(req, res) {
@@ -18,6 +17,8 @@ module.exports = {
 		team.stage = stage;
 		team.tracks.push(track._id);
 		await team.save();
+		req.io.emit('teams');
+		req.io.emit('track');
 
 		return res.json(track);
 	},

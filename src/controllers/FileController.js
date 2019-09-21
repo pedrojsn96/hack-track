@@ -18,6 +18,7 @@ module.exports = {
 		track.files.push(file.url);
 
 		await track.save();
+		req.io.emit('track');
 
 		return res.json(file);
 	}
