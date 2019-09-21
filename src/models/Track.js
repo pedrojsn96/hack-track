@@ -17,7 +17,12 @@ const TrackSchema = new Schema(
 			type: Schema.Types.ObjectId,
 			ref: 'Team',
 			required: true
-		}
+		},
+		files: [
+			{
+				type: String
+			}
+		]
 	},
 	{ timestamps: true }
 );

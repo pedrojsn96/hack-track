@@ -1,5 +1,6 @@
 const Team = require('../models/Team');
 const Track = require('../models/Track');
+const File = require('../models/File');
 
 module.exports = {
 	async store(req, res) {
