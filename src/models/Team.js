@@ -6,6 +6,10 @@ const TeamSchema = new Schema(
 			type: String,
 			required: true
 		},
+		stage: {
+			type: String,
+			default: 'Ideation'
+		},
 		hackathon: {
 			type: Schema.Types.ObjectId,
 			ref: 'Hackathon',

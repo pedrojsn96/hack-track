@@ -14,6 +14,7 @@ module.exports = {
 
 		const team = await Team.findOne({ _id: teamId });
 
+		team.stage = stage;
 		team.tracks.push(track._id);
 		await team.save();
 
