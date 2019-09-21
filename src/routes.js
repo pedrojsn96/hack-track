@@ -2,6 +2,7 @@ const express = require('express');
 const HackathonController = require('./controllers/HackathonController');
 const UserController = require('./controllers/UserController');
 const TeamController = require('./controllers/TeamController');
+const TrackController = require('./controllers/TrackController');
 
 const routes = express.Router();
 
@@ -11,5 +12,7 @@ routes.post('/users', UserController.store);
 routes.post('/teams', TeamController.store);
 routes.post('/teams/join', TeamController.join);
 routes.get('/teams', TeamController.index);
+routes.post('/tracks', TrackController.store);
+routes.get('/tracks', TrackController.index);
 
 module.exports = routes;

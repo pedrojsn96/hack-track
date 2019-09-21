@@ -1,6 +1,5 @@
 const Team = require('../models/Team');
 const User = require('../models/User');
-const Hackathon = require('../models/Hackathon');
 
 module.exports = {
 	async store(req, res) {
@@ -30,10 +29,9 @@ module.exports = {
 	},
 
 	async index(req, res) {
-		let teams = [];
 		const { hackaId } = req.query;
 
-		teams = await Team.find({
+		const teams = await Team.find({
 			hackathon: { $eq: hackaId }
 		});
 

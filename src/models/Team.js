@@ -16,6 +16,12 @@ const TeamSchema = new Schema(
 				type: Schema.Types.ObjectId,
 				ref: 'User'
 			}
+		],
+		tracks: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Track'
+			}
 		]
 	},
 	{ timestamps: true }
