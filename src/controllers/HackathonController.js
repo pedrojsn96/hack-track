@@ -51,5 +51,16 @@ module.exports = {
 		};
 
 		return res.json(response);
+	},
+	async get(req, res) {
+		const { identifier } = req.query;
+
+		const hacka = await Hackathon.findOne({ identifier: identifier });
+
+		if (!hacka) {
+			return res.json({ status: 'error', msg: 'Hackathon not exists!' });
+		}
+
+		return res.json(hacka);
 	}
 };

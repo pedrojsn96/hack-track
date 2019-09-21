@@ -10,6 +10,7 @@ const FileController = require('./controllers/FileController');
 
 const routes = express.Router();
 
+routes.get('/hackathons', HackathonController.get);
 routes.post('/hackathons', HackathonController.store);
 routes.get('/hackathons/validate', HackathonController.validateCode);
 routes.post('/users', UserController.store);
