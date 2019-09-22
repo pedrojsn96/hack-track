@@ -27,7 +27,9 @@ module.exports = {
 	async index(req, res) {
 		const { teamId } = req.query;
 
-		const tracks = await Track.find({ team: { $eq: teamId } });
+		const tracks = await Track.find({ team: { $eq: teamId } }).sort({
+			createdAt: -1
+		});
 
 		return res.json(tracks);
 	}
