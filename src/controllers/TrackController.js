@@ -15,6 +15,7 @@ module.exports = {
 		const team = await Team.findOne({ _id: teamId });
 
 		team.stage = stage;
+		team.status = status;
 		team.tracks.push(track._id);
 		await team.save();
 		req.io.emit('teams');
