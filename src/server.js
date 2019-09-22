@@ -15,12 +15,9 @@ io.on('connection', socket => {
 	console.log('Nova conexão ', socket.id);
 });
 
-mongoose.connect(
-	'mongodb+srv://hacktrack:hacktrack@cluster0-bg77n.mongodb.net/hacktrack?retryWrites=true&w=majority',
-	{
-		useNewUrlParser: true
-	}
-);
+mongoose.connect(process.env.MONGO_URL, {
+	useNewUrlParser: true
+});
 
 app.use((req, res, next) => {
 	req.io = io;
