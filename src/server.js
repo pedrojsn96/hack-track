@@ -6,6 +6,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const routes = require('./routes');
+const mailer = require('./modules/mailer');
 
 const app = express();
 const server = require('http').Server(app);
@@ -34,3 +35,17 @@ app.use(routes);
 server.listen(process.env.PORT || '8080', () => {
 	console.log('This application is running !!!!');
 });
+
+const mentor = 'dale';
+const participant = 'dole';
+const email = 'luis.barroso@ifood.com.br'
+
+mailer.sendMail({
+	to: email,      
+	subject: 'Your hackathon its on',
+	template: '/hackathon_create',
+	context: { mentor, participant },
+  }, (err) => {
+	if (err)      	
+	 console.log(err)
+})
