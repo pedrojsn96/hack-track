@@ -11,6 +11,7 @@ keeping everyone in the same page
 ## Tech Stack
 
 - [Node](https://nodejs.org/en/)
+- [MongoDB](https://www.mongodb.com/)
 
 ## Libs usadas
 
