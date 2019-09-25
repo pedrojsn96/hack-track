@@ -25,6 +25,8 @@ keeping everyone in the same page
 - [multer-s3](https://www.npmjs.com/package/multer-s3)
 - [socket.io](https://socket.io/)
 - [rambda](https://ramdajs.com/)
+- [nodemailer](https://www.npmjs.com/package/nodemailer)
+- [nodemailer-express-handlebars](https://www.npmjs.com/package/nodemailer-express-handlebars)
 
 ### Rodando o projeto localmente
 
