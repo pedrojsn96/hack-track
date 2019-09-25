@@ -3,13 +3,14 @@ const Track = require('../models/Track');
 
 module.exports = {
 	async store(req, res) {
-		const { stage, status, comment, teamId } = req.body;
+		const { stage, status, comment, teamId, files } = req.body;
 
 		const track = await Track.create({
 			stage,
 			status,
 			comment,
-			team: teamId
+			team: teamId,
+			files
 		});
 
 		const team = await Team.findOne({ _id: teamId });

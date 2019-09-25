@@ -45,6 +45,8 @@ module.exports = {
 		const response = {
 			_id: hacka._id,
 			name: hacka.name,
+			mentorLink: hacka.mentorLink,
+			participantLink: hacka.participantLink,
 			identifier: hacka.identifier,
 			isMentor,
 			status: 'ok'
