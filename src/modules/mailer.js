@@ -15,8 +15,7 @@ const transporter = nodemailer.createTransport({
 const handlebarOptions = {
 	viewEngine: {
 		partialsDir: path.resolve('./src/resources/mail/'),
-		layoutsDir: path.resolve('./src/resources/mail/'),
-		defaultLayout: 'hackathon_create'
+		layoutsDir: path.resolve('./src/resources/mail/')
 	},
 	viewPath: path.resolve('./src/resources/mail/')
 };
