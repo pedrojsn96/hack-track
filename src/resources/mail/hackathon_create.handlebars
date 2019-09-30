@@ -1,13 +1,10 @@
-<div>
-    <h1>Your hackathon is on!</h1>
-    <p>Invite participants and mentors using these access codes:</p>
-    <div>
-        <p><b>Mentors:</b></p>
-        <p>{{mentor}}</p>
-        <p><b>Participants:</b></p>
-        <p>{{participant}}</p>
-    </div>
-    <p>Also, open this link on a big screen to have a real time progress bar for all teams during the event!</p>
-    <a href="{{hackatrack}}">{{hackatrack}}</a>
-    <p>Hope you have a great hackathon!</p>
-</div>
+<p>Invite participants and mentors using these access codes:</p>
+
+<p><b>Mentors: </b> {{ mentor }}</p>
+<p><b>Participants: </b> {{ participant }}</p>
+
+<p>
+    Also, open this link on a big screen to have a real time progress bar
+    for all teams during the event!
+</p>
+<a href="{{ hackatrack }}">{{ hackatrack }}</a>
